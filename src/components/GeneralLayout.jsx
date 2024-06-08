@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import {
   DesktopOutlined,
+  PieChartOutlined,
 } from '@ant-design/icons';
 import { Breadcrumb, Layout, Menu, theme } from 'antd';
 import { Outlet } from 'react-router-dom';
-import Home from './Home/Home';
 const { Header, Content, Footer, Sider } = Layout;
 function getItem(label, key, icon, children) {
   return {
@@ -15,8 +15,9 @@ function getItem(label, key, icon, children) {
   };
 }
 const items = [
-  getItem('Home', '1', <Home />),
-  getItem('Option 2', '2', <DesktopOutlined />),
+  getItem('Home ', '1', <PieChartOutlined />),
+  getItem('Category', '2', <DesktopOutlined />),
+  getItem('Product', '3', <DesktopOutlined />),
   
 ];
 const  GeneralLayout = () => {
