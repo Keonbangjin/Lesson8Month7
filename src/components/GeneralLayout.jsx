@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import {
   DesktopOutlined,
-  PieChartOutlined,
 } from '@ant-design/icons';
 import { Breadcrumb, Layout, Menu, theme } from 'antd';
 import { Outlet } from 'react-router-dom';
