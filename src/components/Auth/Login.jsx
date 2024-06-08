@@ -6,6 +6,7 @@ const Login = () => {
     return (
         <div className='card' gap="middle" vertical>
             <Card
+                className='cardss'
                 title="Login"
                 bordered={false}
                 style={{
