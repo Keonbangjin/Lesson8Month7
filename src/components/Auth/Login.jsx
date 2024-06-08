@@ -14,7 +14,7 @@ const Login = () => {
             >
                 <Input type='email' placeholder="Email" />
                 <Input type='password' placeholder="Password" />
-                <Button type="primary">Primary Button</Button>
+                <Button type="primary">Login</Button>
             </Card>
         </div>
     );

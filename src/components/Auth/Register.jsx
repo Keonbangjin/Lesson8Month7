@@ -15,7 +15,7 @@ const Register = () => {
                 <Input type='text' placeholder="Name" />
                 <Input type='email' placeholder="Email" />
                 <Input type='password' placeholder="Password" />
-                <Button type="primary">Primary Button</Button>
+                <Button type="primary">Register</Button>
             </Card>
         </div>
     );
