@@ -6,6 +6,7 @@ const Register = () => {
     return (
         <div className='card' gap="middle" vertical>
             <Card
+                className='cardss'
                 title="Register"
                 bordered={false}
                 style={{
