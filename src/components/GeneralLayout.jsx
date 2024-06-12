@@ -5,7 +5,9 @@ import {
 } from '@ant-design/icons';
 import { Breadcrumb, Layout, Menu, theme } from 'antd';
 import { Outlet } from 'react-router-dom';
+
 const { Header, Content, Footer, Sider } = Layout;
+
 function getItem(label, key, icon, children) {
   return {
     key,
@@ -14,56 +16,45 @@ function getItem(label, key, icon, children) {
     label,
   };
 }
+
 const items = [
-  getItem('Home ', '1', <PieChartOutlined />),
+  getItem('Home', '1', <PieChartOutlined />),
   getItem('Category', '2', <DesktopOutlined />),
   getItem('Product', '3', <DesktopOutlined />),
-  
 ];
-const  GeneralLayout = () => {
+
+const GeneralLayout = () => {
   const [collapsed, setCollapsed] = useState(false);
   const {
-    token: { colorBgContainer,  },
+    token: { colorBgContainer, },
   } = theme.useToken();
   return (
-    <Layout
-      style={{
-        minHeight: '100vh',
-      }}
-    >
-      <Sider collapsible collapsed={collapsed} onCollapse={(value) => setCollapsed(value)}>
-        <div className="demo-logo-vertical" />
+    <Layout style={{ minHeight: '100vh' }}>
+      <Sider
+        collapsible
+        collapsed={collapsed}
+        onCollapse={(value) => setCollapsed(value)}
+        style={{ background: '#001529' }}
+      >
+        <div className="logo" style={{ height: '32px', margin: '16px', background: 'rgba(255, 255, 255, 0.2)' }} />
         <Menu theme="dark" defaultSelectedKeys={['1']} mode="inline" items={items} />
       </Sider>
       <Layout>
-        <Header
-          style={{
-            padding: 0,
-            background: colorBgContainer,
-          }}
-        />
-        <Content
-          style={{
-            margin: '0 16px',
-          }}
-        >
-          <Breadcrumb
-            style={{
-              margin: '16px 0',
-            }}
-          >
+        <Header style={{ padding: 0, background: colorBgContainer }} />
+        <Content style={{ margin: '0 16px' }}>
+          <Breadcrumb style={{ margin: '16px 0' }}>
+            {/* Add breadcrumb items here if needed */}
           </Breadcrumb>
-          <Outlet />
+          <div style={{ padding: 24, background: colorBgContainer, minHeight: 360 }}>
+            <Outlet />
+          </div>
         </Content>
-        <Footer
-          style={{
-            textAlign: 'center',
-          }}
-        >
+        <Footer style={{ textAlign: 'center' }}>
           Ant Design ©{new Date().getFullYear()} Created by Ant UED
         </Footer>
       </Layout>
     </Layout>
   );
 };
+
 export default GeneralLayout;
